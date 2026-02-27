@@ -1,9 +1,12 @@
-# Ver contenido actual
-cat requirements.txt
+# Navega a tu proyecto
+cd "C:\Users\USER\AppData\Local\Programs\Python\Python313\8 - PROYECTO PYTHON AI AGENTS\mi-agente-gemini"
 
-# Si no está correcto, actualízalo:
+# Corrige requirements.txt
 @"
 Flask==3.0.3
 google-genai==1.8.0
 python-dotenv==1.0.1
 "@ | Out-File -FilePath requirements.txt -Encoding UTF8
+
+# Verifica que quedó bien
+cat requirements.txt
