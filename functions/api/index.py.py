@@ -15,18 +15,16 @@ def chat():
     try:
         data = request.json
         user_message = data.get('message', '')
-        if not user_message:
-            return jsonify({'error': 'Mensaje vacío'}), 400
-
+        
         response = client.models.generate_content(
             model="models/gemini-2.5-flash",
             contents=user_message,
         )
+        
         bot_response = response.text if response and response.text else "Lo siento, no pude generar una respuesta"
         return jsonify({'response': bot_response})
-
+    
     except Exception as e:
-        print(f"Error: {str(e)}")
         return jsonify({'error': str(e)}), 500
 
 def handler(request):

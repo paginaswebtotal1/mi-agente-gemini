@@ -5,8 +5,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def serve_index():
-    """Sirve el archivo index.html desde la carpeta templates"""
-    # La ruta absoluta puede ser más fiable en el entorno serverless
     templates_dir = os.path.join(os.path.dirname(__file__), '..', 'templates')
     return send_from_directory(templates_dir, 'index.html')
 
